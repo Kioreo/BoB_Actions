@@ -23,7 +23,7 @@ jobs:
             python -m pip install --upgrade pip
             pip install pytest  
       - name: Create a artifact
-        run: python test.py > ${{ matrix.python-version }}.txt
+        run: echo $(python test.py) > ${{ matrix.python-version }}
       - name: Save artifact
         uses: actions/upload-artifact@v3
         with:
